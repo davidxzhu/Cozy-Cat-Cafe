@@ -5,21 +5,20 @@ using CozyCatCafe.Scripts;
 
 public class Customers : MonoBehaviour
 {
+    private State state;
+
     public Transform customer;
     public Transform dish;
     public Transform seat;
     public float customerMoveSpeed;
 
     [Header("Food")]
-    public Transform bubble;
-    public SpriteRenderer foodSprite;
+    public DialogueBubble bubble;
 
     public Food orderDish;
 
 
     private Transform dishDisplay;
-    private bool isSitting = false;
-    private bool dishCreated = false;
     public bool gotFood;
     private Vector3 moveStep;
     public float fadeStep;
@@ -36,20 +35,29 @@ public class Customers : MonoBehaviour
     }
 
     private void Update() {
-
-        if(!isSitting && Vector3.Distance(customer.position, seat.position) > 0.1){
-            goToSeat();
-        }
-        else{
-            isSitting = true;
-            if(!dishCreated){
+        if (state == State.WalkingIn) {
+            if (Vector3.Distance(customer.position, seat.position) > 0.1)
+                goToSeat();
+            else {
+                state = State.Ordering;
                 createDish();
             }
-            dishCreated = true;
-        }
-
-        if(gotFood && isSitting){
-            Destroy(dishDisplay);
+        } 
+        
+        else if (state == State.Ordering) {
+            if (!gotFood)
+                return;
+            else {
+                state = State.Eating;
+                bubble.ChangeSprite(null);
+            }
+        } 
+        
+        else if (state == State.Eating) {
+            state = State.WalkingOut;
+        } 
+        
+        else {
             leave();
         }
     }
@@ -68,9 +76,7 @@ public class Customers : MonoBehaviour
     }
 
     void createDish(){
-
-        dishDisplay = Instantiate(dish, customer);
-        dishDisplay.position = new Vector3(customer.position.x, customer.position.y + 1, customer.position.z);     
+        bubble.ChangeSprite(orderDish.Sprite);
     }
 
     void leave(){
@@ -83,6 +89,12 @@ public class Customers : MonoBehaviour
         }
     }
 
+    public enum State {
+        WalkingIn,
+        Ordering,
+        Eating,
+        WalkingOut
+    }
 
 
 }

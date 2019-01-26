@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CozyCatCafe.Scripts;
+using System;
 
 public class FoodTools : MonoBehaviour
 {
-    Food foodProcessing;
-    Dictionary<Food,Food> myFoods;
-    PlayerStats player;
-    bool foodReady;
+    public List<FoodTuple> starterList;
+    public Food foodProcessing;
+    public Dictionary<Food,Food> myFoods;
+    public PlayerStats player;
+    public bool foodReady;
 
     // Start is called before the first frame update
     void Start()
     {
         myFoods = new Dictionary<Food,Food>();
-        foodProcessing = null;
-        foodReady = false;
+        foreach(FoodTuple item in starterList){
+            myFoods[item.foodBefore] = item.foodAfter;
+        }
     }
 
     // Update is called once per frame
@@ -46,5 +49,11 @@ public class FoodTools : MonoBehaviour
             player.foodCurrentlyHolding = myFoods[foodProcessing];
             foodProcessing = null;
         }
+    }
+
+    [Serializable]
+    public class FoodTuple {
+        public Food foodBefore;
+        public Food foodAfter;
     }
 }

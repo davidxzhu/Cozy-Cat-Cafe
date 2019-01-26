@@ -6,11 +6,17 @@ using System;
 
 public class FoodTools : MonoBehaviour
 {
-    public List<FoodTuple> starterList;
+    public List<FoodTuple> starterList; //all foods and their states
     public Food foodProcessing;
-    public Dictionary<Food,Food> myFoods;
+    public Dictionary<Food,Food> myFoods; //same thing as starterList but it's a hashmap
     public PlayerStats player;
     public bool foodReady;
+    public float timeLeft = 5; //5 seconds to cook each food
+
+    public IEnumerator startTimer() {
+        yield return new WaitForSeconds(timeLeft);
+        foodReady = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -28,27 +34,26 @@ public class FoodTools : MonoBehaviour
     }
 
     void OnMouseDown(){
-        if(foodProcessing == null){
+        if(foodProcessing == null){ //if tool is unused
             putFood();
-        } else{
-            if(foodReady){
-                getFood();
-                foodReady = false;
-            }
+        } else if(foodReady){ //after food is done cooking
+            getFood();
         }
     }
 
     void putFood(){
-        if(myFoods[player.foodCurrentlyHolding] != null){
-            foodProcessing = player.foodCurrentlyHolding;
-            player.foodCurrentlyHolding = null;
+        if(myFoods[player.holding] != null){
+            foodProcessing = player.holding;
+            player.holding = null;
+            StartCoroutine(startTimer());
         }
     }
     void getFood(){
-        if(player.foodCurrentlyHolding == null){
-            player.foodCurrentlyHolding = myFoods[foodProcessing];
+        if(player.holding == null){
+            player.holding = myFoods[foodProcessing];
             foodProcessing = null;
         }
+        foodReady = false;
     }
 
     [Serializable]

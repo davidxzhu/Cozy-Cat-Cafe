@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Customers : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public transform customer;
+    public transform dish;
+
+
+    private void Awake() {
+        showDish();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void showDish(){
+
+        Transform dishDisplay = Instantiate(dish, customer);
+        dishDisplay.position.y = dishDisplay.position.y + 5f;     
     }
+
 }

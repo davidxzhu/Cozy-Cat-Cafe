@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Customers : MonoBehaviour
 {
-    public transform customer;
-    public transform dish;
+    public Transform customer;
+    public Transform dish;
 
 
     private void Awake() {
@@ -15,7 +15,7 @@ public class Customers : MonoBehaviour
     void showDish(){
 
         Transform dishDisplay = Instantiate(dish, customer);
-        dishDisplay.position.y = dishDisplay.position.y + 5f;     
+        dishDisplay.position = new Vector3(dishDisplay.position.x, dishDisplay.position.y + 5f, dishDisplay.position.z);     
     }
 
 }

@@ -14,13 +14,7 @@ namespace CozyCatCafe.Scripts.Shop
 
 		private void Awake()
 		{
-			enabled = true;
-		}
-
-		private void Update()
-		{
 			InitMenu();
-			enabled = false;
 		}
 
 		private void InitMenu()
@@ -58,11 +52,12 @@ namespace CozyCatCafe.Scripts.Shop
 			}
 		}
 
-		public void Buy(ShopItem item)
+		public void Buy(ShopItem item, ShopItemPanel panel)
 		{
 			PlayerStats.Money -= item.Cost;
+			item.Bought = true;
 			item.OnBought.Invoke();
-			ShopInteractor.Instance.CloseMenu();
+			panel.SetBought();
 		}
 	}
 }

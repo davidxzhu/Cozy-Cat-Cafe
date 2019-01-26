@@ -7,13 +7,17 @@ using System;
 public class Plate : MonoBehaviour
 {
     public PlayerStats player;
-    public HashSet<Food> onPlate; //all the ingredients on the plate currently
-    public List<FoodStates> myMappings;
+    public Dictionary<HashSet<Food>, Food> myMappings; 
+    public HashSet<Food> onPlate;
+    public Food dishToDisplay;
+    public SpriteRenderer Renderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        myMappings = new Dictionary<HashSet<Food>, Food>(HashSet<Food>.CreateSetComparer());
+        onPlate = new HashSet<Food>();
+        dishToDisplay = null;
     }
 
     // Update is called once per frame
@@ -25,20 +29,26 @@ public class Plate : MonoBehaviour
     void OnMouseDown(){
         if(player.holding != null) {
             putFood();
-        } else {
-            getFood();
+        } else if(!player.holdingPlate){
+            player.holdingPlate = true;
+            player.holdingDish = this;
         }
     }
 
     void putFood(){
-        
-    }
-    void getFood(){
-        
+        onPlate.Add(player.holding);
+        player.holding = null;
+        if(myMappings[onPlate] == null){
+
+        } else{
+            dishToDisplay = myMappings[onPlate];
+        }
     }
 
+
+
     [Serializable]
-    public class FoodStates {
+    public class FoodMapping {
         public HashSet<Food> ingredients;
         public Food dishFromIngredients;
     }

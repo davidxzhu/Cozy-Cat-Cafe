@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   Money: 0
+  holding: {fileID: 0}

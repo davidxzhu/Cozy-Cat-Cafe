@@ -16,9 +16,6 @@ public class Customers : MonoBehaviour
     public DialogueBubble bubble;
 
     public Food orderDish;
-
-
-    private Transform dishDisplay;
     public bool gotFood;
     private Vector3 moveStep;
     public float fadeStep;

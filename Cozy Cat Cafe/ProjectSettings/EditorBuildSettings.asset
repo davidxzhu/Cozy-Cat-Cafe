@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/CozyCatCafe/Menu/ShopMenu.unity
+    guid: f8e66dda73d63e9469dc506926b33f16
   m_configObjects: {}

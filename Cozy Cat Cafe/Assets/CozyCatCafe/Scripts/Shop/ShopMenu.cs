@@ -12,6 +12,11 @@ namespace CozyCatCafe.Scripts.Shop
 
 		public PlayerStats PlayerStats;
 
+		private void Awake()
+		{
+			enabled = true;
+		}
+
 		private void Update()
 		{
 			InitMenu();

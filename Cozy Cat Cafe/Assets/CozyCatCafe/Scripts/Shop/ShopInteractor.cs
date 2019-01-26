@@ -12,6 +12,11 @@ namespace CozyCatCafe.Scripts.Shop
 
 		private bool _isShopOpen;
 
+		private void Start()
+		{
+			_isShopOpen = SceneManager.GetSceneByPath(MenuScene).isLoaded;
+		}
+
 		private void RestartScene()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

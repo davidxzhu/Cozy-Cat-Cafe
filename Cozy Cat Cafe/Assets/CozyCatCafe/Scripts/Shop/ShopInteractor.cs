@@ -38,12 +38,14 @@ namespace CozyCatCafe.Scripts.Shop
 		private IEnumerator OpenMenuImpl()
 		{
 			_isShopOpen = true;
+			Time.timeScale = 0f;
 			yield return SceneManager.LoadSceneAsync(MenuScene, LoadSceneMode.Additive);
 		}
 
 		private IEnumerator CloseMenuImpl()
 		{
 			_isShopOpen = false;
+			Time.timeScale = 1f;
 			yield return SceneManager.UnloadSceneAsync(MenuScene);
 		}
 		

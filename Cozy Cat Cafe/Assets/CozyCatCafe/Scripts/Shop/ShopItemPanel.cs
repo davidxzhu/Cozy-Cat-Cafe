@@ -8,19 +8,27 @@ namespace CozyCatCafe.Scripts.Shop
 	{
 		public RectTransform RectTransform;
 		public Image Sprite;
-		public TextMeshProUGUI Name;
-		public TextMeshProUGUI Description;
 		public TextMeshProUGUI Cost;
 		public Button BuyButton;
 
-		public void Init(ShopItem item, ShopMenu menu, bool canBuy)
+		public Image WasBought;
+
+		public void Init(ShopItem item, ShopMenu menu, bool notExpensive)
 		{
 			Sprite.sprite = item.Thumbnail;
-			Name.text = item.Name;
-			Description.text = item.Description;
 			Cost.text = $"<sprite=1>{item.Cost}";
-			BuyButton.interactable = canBuy;
-			BuyButton.onClick.AddListener(() => menu.Buy(item));
+			BuyButton.interactable = notExpensive;
+			BuyButton.onClick.AddListener(() => menu.Buy(item, this));
+			if (item.Bought)
+				SetBought();
+			else
+				WasBought.gameObject.SetActive(false);
+		}
+
+		public void SetBought()
+		{
+			BuyButton.interactable = false;
+			WasBought.gameObject.SetActive(true);
 		}
 	}
 }

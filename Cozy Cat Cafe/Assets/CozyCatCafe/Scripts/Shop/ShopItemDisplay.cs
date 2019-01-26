@@ -8,6 +8,7 @@ namespace CozyCatCafe.Scripts.Shop
 
 		private void Awake()
 		{
+			enabled = false;
 			Item.OnBought.AddListener(() => enabled = true);
 		}
 	}

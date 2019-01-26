@@ -5,11 +5,14 @@ using CozyCatCafe.Scripts;
 
 public class FoodTools : MonoBehaviour
 {
+    Food foodProcessing;
+    Dictionary<Food,Food> myFoods;
 
     // Start is called before the first frame update
     void Start()
     {
-        Dictionary<Food,Food> myFoods = new Dictionary<Food,Food>();
+        myFoods = new Dictionary<Food,Food>();
+        foodProcessing = null;
     }
 
     // Update is called once per frame
@@ -18,5 +21,18 @@ public class FoodTools : MonoBehaviour
         
     }
 
-    Food getResult()
+    void OnMouseDown(){
+        getResult();
+    }
+
+    Food getResult(){
+        // if(myFoods[PlayerStats.foodCurrentlyHolding] == null || foodProcessing != null){
+
+        // } else{
+        //     foodProcessing = PlayerStats.foodCurrentlyHolding;
+
+        //     PlayerStats.foodCurrentlyHolding = myFoods[PlayerStats.foodCurrentlyHolding];
+        // }
+        return null;
+    }
 }

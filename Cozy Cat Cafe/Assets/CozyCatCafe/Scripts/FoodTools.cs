@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using CozyCatCafe.Scripts;
 using System;
+using Plugins.CloudCanards.Inspector;
 
 public class FoodTools : MonoBehaviour
 {
+    [Required]
     public List<FoodTuple> starterList; //all foods and their states
     public Food foodProcessing;
     public Dictionary<Food,Food> myFoods; //same thing as starterList but it's a hashmap
     public PlayerStats player;
     public bool foodReady;
     public float timeLeft = 5; //5 seconds to cook each food
+    private bool _timerStarted;
 
-    public IEnumerator startTimer() {
+    public IEnumerator startTimer()
+    {
+        _timerStarted = true;
         yield return new WaitForSeconds(timeLeft);
         foodReady = true;
+        _timerStarted = false;
     }
 
     // Start is called before the first frame update
@@ -42,7 +48,7 @@ public class FoodTools : MonoBehaviour
     }
 
     void putFood(){
-        if(myFoods[player.holding] != null){
+        if(foodProcessing == null && player.holding != null && myFoods[player.holding] != null && !_timerStarted){
             foodProcessing = player.holding;
             player.holding = null;
             StartCoroutine(startTimer());
@@ -52,8 +58,8 @@ public class FoodTools : MonoBehaviour
         if(player.holding == null){
             player.holding = myFoods[foodProcessing];
             foodProcessing = null;
+            foodReady = false;
         }
-        foodReady = false;
     }
 
     [Serializable]

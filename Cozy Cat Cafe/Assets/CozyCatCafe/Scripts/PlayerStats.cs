@@ -6,7 +6,5 @@ namespace CozyCatCafe.Scripts
 	{
 		public int Money;
 		public Food holding;
-		public bool holdingPlate;
-		public Plate holdingDish;
 	}
 }

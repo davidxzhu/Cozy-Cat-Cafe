@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab0d1f2a4e44d685461ce181335e1b, type: 3}
   m_Name: Rice
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: a4a22b6f7072ffc47a55d12b7a1a86e8, type: 3}

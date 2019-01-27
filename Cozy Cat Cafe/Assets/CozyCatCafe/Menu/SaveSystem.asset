@@ -7,9 +7,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ab0d1f2a4e44d685461ce181335e1b, type: 3}
-  m_Name: Milk
+  m_Script: {fileID: 11500000, guid: 38b70e3e3bff8464fb08d4af6f59caaf, type: 3}
+  m_Name: SaveSystem
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 4916506874478b946acc2daf65815122, type: 3}
+  Player: {fileID: 11400000, guid: 01f24780a8324ef469ebd269eee89af2, type: 2}
+  Decorations:
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}

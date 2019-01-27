@@ -5,6 +5,7 @@ using CozyCatCafe.Scripts;
 using System;
 using Plugins.CloudCanards.Inspector;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class FoodTools : MonoBehaviour
 {
     public List<FoodTuple> starterList; //all foods and their states
@@ -16,6 +17,13 @@ public class FoodTools : MonoBehaviour
     public bool foodReady;
     public float timeLeft = 5; //5 seconds to cook each food
     private bool _timerStarted;
+
+    [Required]
+    public Sprite WithoutFood;
+    [Required]
+    public Sprite WithFood;
+
+    private SpriteRenderer _renderer;
 
     public ProgressBar ProgressBar;
 
@@ -40,6 +48,9 @@ public class FoodTools : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _renderer = GetComponent<SpriteRenderer>();
+        _renderer.sprite = WithoutFood;
+        
         myFoods = new Dictionary<Food,Food>();
         foreach(FoodTuple item in starterList){
             myFoods[item.foodBefore] = item.foodAfter;
@@ -64,6 +75,7 @@ public class FoodTools : MonoBehaviour
         if(foodProcessing == null && player.holding != null && myFoods.ContainsKey(player.holding) && !_timerStarted){
             foodProcessing = player.holding;
             player.holding = null;
+            _renderer.sprite = WithFood;
             StartCoroutine(startTimer());
         }
     }
@@ -72,6 +84,7 @@ public class FoodTools : MonoBehaviour
             player.holding = myFoods[foodProcessing];
             foodProcessing = null;
             foodReady = false;
+            _renderer.sprite = WithoutFood;
         }
     }
 

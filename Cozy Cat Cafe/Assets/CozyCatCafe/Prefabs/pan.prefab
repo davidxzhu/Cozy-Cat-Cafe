@@ -117,6 +117,8 @@ MonoBehaviour:
   player: {fileID: 11400000, guid: 01f24780a8324ef469ebd269eee89af2, type: 2}
   foodReady: 0
   timeLeft: 5
+  WithoutFood: {fileID: 21300000, guid: 1c3c422bcdd90db44890fd29e16986bd, type: 3}
+  WithFood: {fileID: 21300000, guid: 1f41582757684914b9b251a520f7fde8, type: 3}
   ProgressBar: {fileID: 618087143749000045}
 --- !u!1001 &2074614046014632468
 PrefabInstance:
@@ -188,12 +190,12 @@ PrefabInstance:
     - target: {fileID: 7127462875579833066, guid: f692bcbe6a5dc6c4a9b5530e04ae16fa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.372
+      value: -0.337
       objectReference: {fileID: 0}
     - target: {fileID: 7127462875579833066, guid: f692bcbe6a5dc6c4a9b5530e04ae16fa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.078
+      value: 0.928
       objectReference: {fileID: 0}
     - target: {fileID: 7127462875579833066, guid: f692bcbe6a5dc6c4a9b5530e04ae16fa,
         type: 3}

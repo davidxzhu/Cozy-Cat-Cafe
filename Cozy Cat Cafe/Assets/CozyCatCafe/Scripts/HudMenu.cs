@@ -41,7 +41,7 @@ namespace CozyCatCafe.Scripts
 		public void OpenShopPressed()
 		{
 			Toggle();
-			ShopInteractor.Instance.OpenMenu();
+			ShopInteractor.Instance.ToggleMenu();
 		}
 
 		public void SavePressed()

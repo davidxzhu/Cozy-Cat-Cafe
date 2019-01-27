@@ -5,6 +5,9 @@ namespace CozyCatCafe.Scripts
 {
 	public class CustomerSpawner : MonoBehaviour
 	{
+		private static int _randomBase;
+		private static int _spawnNo;
+		
 		[Required]
 		public Food[] OrderList;
 		
@@ -30,7 +33,20 @@ namespace CozyCatCafe.Scripts
 					{
 						var obj = Instantiate(CustomerPrefab, transform.position, Quaternion.identity);
 						obj.setSeat(Seats[i]);
-						obj.orderDish = OrderList[Random.Range(0, OrderList.Length)];
+
+						var index = _spawnNo;
+						if (index >= OrderList.Length)
+						{
+							index = Random.Range(0, OrderList.Length);
+							_spawnNo = 0;
+							_randomBase = Random.Range(0, 100);
+						}
+						else
+						{
+							_spawnNo++;
+						}
+
+						obj.orderDish = OrderList[(index + _randomBase) % OrderList.Length];
 						return;
 					}
 				}

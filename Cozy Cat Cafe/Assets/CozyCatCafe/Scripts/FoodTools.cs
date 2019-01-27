@@ -30,6 +30,10 @@ public class FoodTools : MonoBehaviour
     public IEnumerator startTimer()
     {
         _timerStarted = true;
+        
+        var sound = GetComponent<AudioSource>();
+        if (sound != null)
+            sound.Play();
 
         var delta = 1f / timeLeft;
         var progress = 0f;

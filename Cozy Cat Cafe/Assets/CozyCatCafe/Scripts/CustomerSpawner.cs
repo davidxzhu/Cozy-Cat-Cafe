@@ -31,6 +31,7 @@ namespace CozyCatCafe.Scripts
 						var obj = Instantiate(CustomerPrefab, transform.position, Quaternion.identity);
 						obj.setSeat(Seats[i]);
 						obj.orderDish = OrderList[Random.Range(0, OrderList.Length)];
+						return;
 					}
 				}
 			}

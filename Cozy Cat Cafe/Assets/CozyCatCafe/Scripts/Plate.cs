@@ -19,7 +19,7 @@ public class Plate : MonoBehaviour
 		{
 			_dish = value;
 			if (FoodDisplay != null)
-				FoodDisplay.sprite = value.Sprite;
+				FoodDisplay.sprite = value == null ? null : value.Sprite;
 		}
 	}
 

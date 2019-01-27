@@ -8,6 +8,8 @@ namespace CozyCatCafe.Scripts.Shop
 	{
 		public RectTransform RectTransform;
 		public Image Sprite;
+		public TextMeshProUGUI Name;
+		public TextMeshProUGUI Description;
 		public TextMeshProUGUI Cost;
 		public Button BuyButton;
 
@@ -16,6 +18,8 @@ namespace CozyCatCafe.Scripts.Shop
 		public void Init(ShopItem item, ShopMenu menu, bool notExpensive)
 		{
 			Sprite.sprite = item.Thumbnail;
+			Name.text = item.name;
+			Description.text = item.Description;
 			Cost.text = $"<sprite=1>{item.Cost}";
 			BuyButton.interactable = notExpensive;
 			BuyButton.onClick.AddListener(() => menu.Buy(item, this));

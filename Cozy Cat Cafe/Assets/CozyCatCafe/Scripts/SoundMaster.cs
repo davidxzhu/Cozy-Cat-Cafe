@@ -41,6 +41,9 @@ namespace CozyCatCafe.Scripts
 				case Type.Menu:
 					clip = _master.Menu;
 					break;
+				case Type.Invalid:
+					clip = _master.ItemPop;
+					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(type), type, null);
 			}
@@ -54,6 +57,7 @@ namespace CozyCatCafe.Scripts
 		{
 			Item,
 			Menu,
+			Invalid,
 		}
 	}
 }

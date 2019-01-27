@@ -25,16 +25,28 @@ public class Plate : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		SoundMaster.Play(SoundMaster.Type.Item);
-		if (player.holding != null && !onPlate.Contains(player.holding))
+		if (player.holding != null)
 		{
-			putFood();
+			if (onPlate.Contains(player.holding))
+			{
+				SoundMaster.Play(SoundMaster.Type.Invalid);
+			}
+			else
+			{
+				SoundMaster.Play(SoundMaster.Type.Item);
+				putFood();
+			}
 		}
 		else if (dishToDisplay != null)
 		{
+			SoundMaster.Play(SoundMaster.Type.Item);
 			player.holding = dishToDisplay;
 			onPlate.Clear();
 			dishToDisplay = null;
+		}
+		else
+		{
+			SoundMaster.Play(SoundMaster.Type.Invalid);
 		}
 	}
 

@@ -13,7 +13,13 @@ namespace CozyCatCafe.Scripts
 			{
 				Player.holding = null;
 				// todo: particles
-				Debug.Log("Trashed");
+				var sound = GetComponent<AudioSource>();
+				if (sound != null)
+					sound.Play();
+			}
+			else
+			{
+				SoundMaster.Play(SoundMaster.Type.Invalid);
 			}
 		}
 	}

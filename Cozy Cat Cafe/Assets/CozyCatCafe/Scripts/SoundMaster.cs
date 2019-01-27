@@ -12,6 +12,7 @@ namespace CozyCatCafe.Scripts
 
 		public AudioClip ItemPop;
 		public AudioClip Menu;
+		public AudioClip Invalid;
 
 		private void Awake()
 		{
@@ -42,7 +43,7 @@ namespace CozyCatCafe.Scripts
 					clip = _master.Menu;
 					break;
 				case Type.Invalid:
-					clip = _master.ItemPop;
+					clip = _master.Invalid;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(type), type, null);

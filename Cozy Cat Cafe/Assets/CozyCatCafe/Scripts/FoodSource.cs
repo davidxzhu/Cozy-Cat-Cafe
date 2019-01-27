@@ -8,8 +8,10 @@ namespace CozyCatCafe.Scripts
 	{
 		[Required]
 		public PlayerStats Player;
+
 		[Required]
 		public Food FoodToProduce;
+
 		public float Duration;
 		private bool _timerStarted;
 		private bool _hasFood = true;
@@ -21,21 +23,28 @@ namespace CozyCatCafe.Scripts
 			_timerStarted = false;
 			_hasFood = true;
 		}
-		
+
 		private void OnMouseDown()
 		{
 			if (_hasFood)
 			{
-				if(Player.holding == null){
+				if (Player.holding == null)
+				{
 					SoundMaster.Play(SoundMaster.Type.Item);
 					Player.holding = FoodToProduce;
 					//_hasFood = false;
+				}
+				else
+				{
+					SoundMaster.Play(SoundMaster.Type.Invalid);
 				}
 			}
 			else
 			{
 				if (!_timerStarted)
 					StartCoroutine(Timer());
+				else
+					SoundMaster.Play(SoundMaster.Type.Invalid);
 			}
 		}
 	}

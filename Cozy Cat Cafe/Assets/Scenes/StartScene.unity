@@ -1567,6 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemPop: {fileID: 8300000, guid: b6a6d47a576d83a429241cf8662a3667, type: 3}
   Menu: {fileID: 8300000, guid: f4c318347b657d04fb97ec67de64dc18, type: 3}
+  Invalid: {fileID: 8300000, guid: c6f3559483ac32040b87509adb02e769, type: 3}
 --- !u!82 &1901357091
 AudioSource:
   m_ObjectHideFlags: 0

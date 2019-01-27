@@ -18,7 +18,10 @@ namespace CozyCatCafe.Scripts
 		private void OnMouseDown()
 		{
 			if (Player.holding == null)
+			{
+				SoundMaster.Play(SoundMaster.Type.Invalid);
 				return;
+			}
 
 			Customer.gotFood = true;
 			if (Player.holding == Customer.orderDish)

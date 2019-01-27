@@ -40,5 +40,16 @@ namespace CozyCatCafe.Scripts
 				Decorations[index].Bought = decorationsStr[index] == 't';
 			}
 		}
+
+		public void Reset()
+		{
+			Player.Money = 0;
+			Player.holding = null;
+			
+			foreach (var shopItem in Decorations)
+			{
+				shopItem.Bought = false;
+			}
+		}
 	}
 }

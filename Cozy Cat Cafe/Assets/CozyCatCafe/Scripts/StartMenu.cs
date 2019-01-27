@@ -23,13 +23,15 @@ namespace CozyCatCafe.Scripts
 		public void NewGamePressed()
 		{
 			SoundMaster.Play(SoundMaster.Type.Menu);
+			Save.Reset();
 			SceneManager.LoadScene(PlayScene);
 		}
 
 		public void ContinuePressed()
 		{
+			SoundMaster.Play(SoundMaster.Type.Menu);
 			Save.Load();
-			NewGamePressed();
+			SceneManager.LoadScene(PlayScene);
 		}
 
 		public void QuitPressed()

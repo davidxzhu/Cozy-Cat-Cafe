@@ -12,7 +12,7 @@ namespace CozyCatCafe.Scripts
 		public Food FoodToProduce;
 		public float Duration;
 		private bool _timerStarted;
-		private bool _hasFood;
+		private bool _hasFood = true;
 
 		private IEnumerator Timer()
 		{
@@ -28,7 +28,7 @@ namespace CozyCatCafe.Scripts
 			{
 				if(Player.holding == null){
 					Player.holding = FoodToProduce;
-					_hasFood = false;
+					//_hasFood = false;
 				}
 			}
 			else

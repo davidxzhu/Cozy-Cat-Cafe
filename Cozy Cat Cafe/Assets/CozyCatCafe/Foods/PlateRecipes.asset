@@ -22,3 +22,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ceccb58ea12d0444ab39865a6bb35871, type: 2}
     - {fileID: 11400000, guid: 39e9999e9db40874cbe6aca5ae0bb8fb, type: 2}
     Result: {fileID: 11400000, guid: a6f2b2e222d32434a84b00a338c97547, type: 2}
+  - _foods:
+    - {fileID: 11400000, guid: 5330c9b65d29ad847b09448af8eb94b1, type: 2}
+    Result: {fileID: 11400000, guid: 5330c9b65d29ad847b09448af8eb94b1, type: 2}

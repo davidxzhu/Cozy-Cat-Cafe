@@ -17,10 +17,22 @@ public class FoodTools : MonoBehaviour
     public float timeLeft = 5; //5 seconds to cook each food
     private bool _timerStarted;
 
+    public ProgressBar ProgressBar;
+
     public IEnumerator startTimer()
     {
         _timerStarted = true;
-        yield return new WaitForSeconds(timeLeft);
+
+        var delta = 1f / timeLeft;
+        var progress = 0f;
+        while (progress < 1f)
+        {
+            progress += Time.deltaTime * delta;
+            ProgressBar.Progress = Mathf.Clamp01(progress);
+            yield return null;
+        }
+
+        ProgressBar.Progress = 0f;
         foodReady = true;
         _timerStarted = false;
     }

@@ -7,8 +7,10 @@ namespace CozyCatCafe.Scripts
 	{
 		[Required]
 		public PlayerStats Player;
+		public int PlayerIndex;
 		private void OnMouseDown()
 		{
+			PlayerVisibility.Instance.Select(PlayerIndex);
 			if (Player.holding != null)
 			{
 				Player.holding = null;

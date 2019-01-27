@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b5a53dc8d54f66862775dfd6ac2fe5, type: 3}
   m_Name: Three Fish Door Curtain
   m_EditorClassIdentifier: 
-  Description: 
-  Thumbnail: {fileID: 0}
-  Cost: 1
+  Description: Minimal fish design.
+  Thumbnail: {fileID: 21300000, guid: 1b99963ed24d4384c8cf30cab7eaf4b4, type: 3}
+  Cost: 20
   OnBought:
     m_PersistentCalls:
       m_Calls: []

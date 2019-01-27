@@ -15,6 +15,8 @@ namespace CozyCatCafe.Scripts
 		public GameObject HappyParticles;
 		public GameObject SadParticles;
 
+		public int PlayerIndex;
+
 		private void OnMouseDown()
 		{
 			if (Player.holding == null)
@@ -23,6 +25,7 @@ namespace CozyCatCafe.Scripts
 				return;
 			}
 
+			PlayerVisibility.Instance.Select(PlayerIndex);
 			Customer.gotFood = true;
 			if (Player.holding == Customer.orderDish)
 			{

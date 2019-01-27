@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using CozyCatCafe.Scripts.Shop;
 
 namespace CozyCatCafe.Scripts.Shop
 {
@@ -58,6 +59,11 @@ namespace CozyCatCafe.Scripts.Shop
 			item.Bought = true;
 			item.OnBought.Invoke();
 			panel.SetBought();
+		}
+
+		public void Close()
+		{
+			ShopInteractor.Instance.CloseMenu();
 		}
 	}
 }

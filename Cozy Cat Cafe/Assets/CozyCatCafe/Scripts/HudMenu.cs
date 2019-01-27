@@ -17,44 +17,24 @@ namespace CozyCatCafe.Scripts
 
 		private bool _isOpen;
 
-		public Animator Animation;
-
 		[ScenePicker]
 		public string StartMenu;
 
 		public SaveSystem SaveSystem;
 
-		private IEnumerator ButtonPopIn()
-		{
-			for (var i = 0; i < Buttons.Length; i++)
-			{
-				yield return new WaitForSecondsRealtime(PopDuration);
-				Buttons[i].transform.localScale = new Vector3(1, 1, 1);
-			}
-		}
-
-		private IEnumerator ButtonPopOut()
-		{
-			for (var i = 0; i < Buttons.Length; i++)
-			{
-				yield return new WaitForSecondsRealtime(PopDuration);
-				Buttons[i].transform.localScale = new Vector3(0, 0, 1);
-			}
-		}
+		public Animator animator;
 
 		public void Toggle()
 		{
 			if (_isOpen)
 			{
 				_isOpen = false;
-				StartCoroutine(ButtonPopOut());
-				Animation.Play(CloseAnim);
+				animator.SetFloat("animSpeed", -1);
 			}
 			else
 			{
 				_isOpen = true;
-				StartCoroutine(ButtonPopIn());
-				Animation.Play(OpenAnim);
+				animator.SetFloat("animSpeed", 1);
 			}
 		}
 

@@ -206,18 +206,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74633390}
   m_CullTransparentMesh: 0
---- !u!114 &216691335 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5765937872828239797, guid: 95609f72787ab4e4d8b2c841035881db,
-    type: 3}
-  m_PrefabInstance: {fileID: 5765937873877521892}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796e9cac31894c1fb03f17a9099f4668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &229812972
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +284,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 229812975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667126372}
+        m_MethodName: ClosePressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &229812975
@@ -433,7 +432,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 239851019}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667126372}
+        m_MethodName: SavePressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &239851019
@@ -540,6 +550,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460309600}
   m_CullTransparentMesh: 0
+--- !u!1 &473074365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473074366}
+  m_Layer: 0
+  m_Name: PlayerInfoUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &473074366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473074365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 143.72136, y: 139.12646, z: 0.439876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485869381
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,8 +659,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216691335}
-        m_MethodName: ToggleMenu
+      - m_Target: {fileID: 1667126372}
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -914,7 +954,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1139628905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667126372}
+        m_MethodName: OpenShopPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1139628905
@@ -1077,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1554508323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1096,7 +1147,6 @@ MonoBehaviour:
   customerMoveSpeed: 200
   bubble: {fileID: 1314202195}
   orderDish: {fileID: 11400000, guid: 4f609c42b2715c54ea9b79d6e1091ba7, type: 2}
-  gotFood: 0
   fadeStep: 150
 --- !u!212 &1554508324
 SpriteRenderer:
@@ -1174,6 +1224,7 @@ GameObject:
   - component: {fileID: 1667126368}
   - component: {fileID: 1667126367}
   - component: {fileID: 1667126371}
+  - component: {fileID: 1667126372}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1281,6 +1332,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1667126372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667126366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9964ca2bbee12f445bc844744a008d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons: []
+  PopDuration: 0.1
+  StartMenu: Assets/Scenes/StartScene.unity
+  SaveSystem: {fileID: 11400000, guid: 680288a7647f04648ba2dd43c6bf5665, type: 2}
+  animator: {fileID: 1667126371}
 --- !u!1 &1945927566
 GameObject:
   m_ObjectHideFlags: 0

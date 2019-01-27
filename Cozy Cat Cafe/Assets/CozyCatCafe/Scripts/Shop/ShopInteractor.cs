@@ -63,7 +63,6 @@ namespace CozyCatCafe.Scripts.Shop
 		private void Awake()
 		{
 			_instance = this;
-			DontDestroyOnLoad(this);
 		}
 
 		#endregion

@@ -1,9 +1,14 @@
+using Plugins.CloudCanards.Inspector;
 using UnityEngine;
 
 namespace CozyCatCafe.Scripts
 {
 	public class CustomerSpawner : MonoBehaviour
 	{
+		[Required]
+		public Food[] OrderList;
+		
+		[Required]
 		public Seat[] Seats;
 		public Customers CustomerPrefab;
 
@@ -25,6 +30,7 @@ namespace CozyCatCafe.Scripts
 					{
 						var obj = Instantiate(CustomerPrefab, transform.position, Quaternion.identity);
 						obj.setSeat(Seats[i]);
+						obj.orderDish = OrderList[Random.Range(0, OrderList.Length)];
 					}
 				}
 			}

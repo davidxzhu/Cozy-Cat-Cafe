@@ -71,7 +71,7 @@ public class Customers : MonoBehaviour
     public void setSeat(Seat seat){
         this.seat = seat;
         seat.Customer = this;
-        moveStep = (seat.transform.position - customer.position) / customerMoveSpeed;
+        moveStep = (customer.position - seat.transform.position) / customerMoveSpeed;
         fadeStep = 1 / customerMoveSpeed;//Vector3.Distance(customer.position, seat.position);
     }
 

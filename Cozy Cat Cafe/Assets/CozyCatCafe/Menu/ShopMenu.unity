@@ -332,6 +332,7 @@ MonoBehaviour:
   Description: {fileID: 2034162538}
   Cost: {fileID: 1523614489}
   BuyButton: {fileID: 2060198205}
+  WasBought: {fileID: 0}
 --- !u!114 &400460612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &473007769
@@ -689,6 +690,7 @@ MonoBehaviour:
   Description: {fileID: 512980092}
   Cost: {fileID: 2029695649}
   BuyButton: {fileID: 879487108}
+  WasBought: {fileID: 0}
 --- !u!114 &637562565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,6 +1839,16 @@ MonoBehaviour:
   ItemPanel: {fileID: 456627120956373557, guid: 15fe5c707396c9243a658463a10225f8,
     type: 3}
   Items:
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: 396a06bf820e60841bb5cd1ebe998852, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
+  - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
   - {fileID: 11400000, guid: da09d2720b1fe6a4880333259730cce5, type: 2}
   PlayerStats: {fileID: 11400000, guid: 01f24780a8324ef469ebd269eee89af2, type: 2}
 --- !u!1 &1803977302

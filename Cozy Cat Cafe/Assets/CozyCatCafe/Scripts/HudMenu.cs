@@ -29,12 +29,12 @@ namespace CozyCatCafe.Scripts
 			if (_isOpen)
 			{
 				_isOpen = false;
-				animator.SetFloat("animSpeed", -1);
+				animator.SetBool("clicked", false);
 			}
 			else
 			{
 				_isOpen = true;
-				animator.SetFloat("animSpeed", 1);
+				animator.SetBool("clicked", true);
 			}
 		}
 

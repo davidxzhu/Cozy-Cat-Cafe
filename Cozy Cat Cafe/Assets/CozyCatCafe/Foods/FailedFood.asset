@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab0d1f2a4e44d685461ce181335e1b, type: 3}
   m_Name: FailedFood
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 63fe3a6ba163c1a4295e1ed8d0577bf8, type: 3}
+  Sprite: {fileID: 21300000, guid: 232df9ac10eb7bc4c951e0d2eface43a, type: 3}

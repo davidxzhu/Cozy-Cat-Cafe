@@ -96,7 +96,7 @@ MonoBehaviour:
   customer: {fileID: 7756046766653991627}
   dish: {fileID: 5883228188841690661, guid: cac751b79a5a97742b8c6380c3ca42ea, type: 3}
   seat: {fileID: 0}
-  customerMoveSpeed: 200
+  customerMoveSpeed: 15
   bubble: {fileID: 9199466537097265593}
   orderDish: {fileID: 11400000, guid: 4f609c42b2715c54ea9b79d6e1091ba7, type: 2}
   fadeStep: 150

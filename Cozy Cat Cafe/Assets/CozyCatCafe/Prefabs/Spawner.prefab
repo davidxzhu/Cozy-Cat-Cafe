@@ -46,8 +46,14 @@ MonoBehaviour:
   OrderList:
   - {fileID: 11400000, guid: 363902e062a744f4bad40f0fee6e839d, type: 2}
   - {fileID: 11400000, guid: a6f2b2e222d32434a84b00a338c97547, type: 2}
+  - {fileID: 11400000, guid: 5330c9b65d29ad847b09448af8eb94b1, type: 2}
   Seats: []
   CustomerPrefab: {fileID: 7756046766653991629, guid: 9c9ab0398607938469773f212de65ae3,
     type: 3}
   MinDuration: 1
   MaxDuration: 5
+  Sprites:
+  - WalkingBack: {fileID: 21300000, guid: 7c693dd6e96b97a4da77502a64b47170, type: 3}
+    Sitting: {fileID: 21300000, guid: 02f165b528d8e9c4f9b8ddebc5e6d96d, type: 3}
+  - WalkingBack: {fileID: 21300000, guid: 4c4d3863972b2c341a19fc4acd30428d, type: 3}
+    Sitting: {fileID: 21300000, guid: f9010d791d8b5c140b27c86d1e411f4e, type: 3}

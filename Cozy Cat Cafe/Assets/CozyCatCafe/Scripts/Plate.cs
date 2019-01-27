@@ -25,7 +25,7 @@ public class Plate : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		if (player.holding != null)
+		if (player.holding != null && !onPlate.Contains(player.holding))
 		{
 			putFood();
 		}

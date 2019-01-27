@@ -33,6 +33,8 @@ namespace CozyCatCafe.Scripts
 				if (SadParticles != null)
 					Instantiate(SadParticles, transform);
 			}
+
+			Player.holding = null;
 		}
 	}
 }

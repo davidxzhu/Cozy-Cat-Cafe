@@ -8,6 +8,9 @@ namespace CozyCatCafe.Scripts
 	public class PlateRecipe : ScriptableObject
 	{
 		[SerializeField]
+		private Food _failedFood;
+		
+		[SerializeField]
 		private List<Recipe> _recipes;
 
 		public (Food bestFood, float matchPercentage) GetBestFood(HashSet<Food> plateFoods)
@@ -43,7 +46,7 @@ namespace CozyCatCafe.Scripts
 					break;
 			}
 
-			return (bestRecipe?.Result, match);
+			return (match < 1f ? _failedFood : bestRecipe?.Result, match);
 		}
 
 		[Serializable]

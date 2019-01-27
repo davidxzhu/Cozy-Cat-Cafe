@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360126369115dcd448b8286c85e79e96, type: 3}
   m_Name: PlateRecipes
   m_EditorClassIdentifier: 
+  _failedFood: {fileID: 11400000, guid: 34f2f5b52512d8f49ab79a7137b51387, type: 2}
   _recipes:
   - _foods:
     - {fileID: 11400000, guid: d848617023ffe1042b497fdfebae9204, type: 2}

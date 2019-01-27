@@ -17,11 +17,11 @@ namespace CozyCatCafe.Scripts
 
 		private void OnMouseDown()
 		{
-			if (Player.holding != null || Player.holdingPlate || Player.holdingDish == null)
+			if (Player.holding == null)
 				return;
 
 			Customer.gotFood = true;
-			if (Player.holdingDish.dishToDisplay == Customer.orderDish)
+			if (Player.holding == Customer.orderDish)
 			{
 				// todo
 				Player.Money++;

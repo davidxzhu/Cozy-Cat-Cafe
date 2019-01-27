@@ -85,6 +85,7 @@ public class FoodTools : MonoBehaviour
     }
     void getFood(){
         if(player.holding == null){
+            SoundMaster.Play(SoundMaster.Type.Item);
             player.holding = myFoods[foodProcessing];
             foodProcessing = null;
             foodReady = false;

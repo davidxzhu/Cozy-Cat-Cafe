@@ -27,6 +27,7 @@ namespace CozyCatCafe.Scripts
 			if (_hasFood)
 			{
 				if(Player.holding == null){
+					SoundMaster.Play(SoundMaster.Type.Item);
 					Player.holding = FoodToProduce;
 					//_hasFood = false;
 				}

@@ -26,6 +26,7 @@ namespace CozyCatCafe.Scripts
 
 		public void Toggle()
 		{
+			SoundMaster.Play(SoundMaster.Type.Menu);
 			if (_isOpen)
 			{
 				_isOpen = false;
@@ -52,6 +53,7 @@ namespace CozyCatCafe.Scripts
 
 		public void ClosePressed()
 		{
+			SoundMaster.Play(SoundMaster.Type.Menu);
 			SceneManager.LoadScene(StartMenu);
 		}
 	}

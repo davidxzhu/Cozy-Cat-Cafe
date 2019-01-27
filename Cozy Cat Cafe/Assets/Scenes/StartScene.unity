@@ -501,6 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayScene: Assets/Scenes/SampleScene.unity
   Save: {fileID: 11400000, guid: 680288a7647f04648ba2dd43c6bf5665, type: 2}
+  QuitButton: {fileID: 0}
 --- !u!1 &963516878
 GameObject:
   m_ObjectHideFlags: 0

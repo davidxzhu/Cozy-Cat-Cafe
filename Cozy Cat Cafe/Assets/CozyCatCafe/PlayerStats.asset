@@ -14,5 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Money: 9
   holding: {fileID: 0}
-  holdingPlate: 0
-  holdingDish: {fileID: 0}

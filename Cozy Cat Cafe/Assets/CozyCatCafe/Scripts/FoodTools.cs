@@ -7,11 +7,12 @@ using Plugins.CloudCanards.Inspector;
 
 public class FoodTools : MonoBehaviour
 {
-    [Required]
     public List<FoodTuple> starterList; //all foods and their states
+    [ShowOnly]
     public Food foodProcessing;
     public Dictionary<Food,Food> myFoods; //same thing as starterList but it's a hashmap
     public PlayerStats player;
+    [ShowOnly]
     public bool foodReady;
     public float timeLeft = 5; //5 seconds to cook each food
     private bool _timerStarted;
@@ -48,7 +49,7 @@ public class FoodTools : MonoBehaviour
     }
 
     void putFood(){
-        if(foodProcessing == null && player.holding != null && myFoods[player.holding] != null && !_timerStarted){
+        if(foodProcessing == null && player.holding != null && myFoods.ContainsKey(player.holding) && !_timerStarted){
             foodProcessing = player.holding;
             player.holding = null;
             StartCoroutine(startTimer());

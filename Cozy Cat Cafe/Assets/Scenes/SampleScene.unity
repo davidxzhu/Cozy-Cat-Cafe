@@ -589,6 +589,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
+        type: 3}
+      propertyPath: PlayerIndex
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5035609871920764003, guid: 40d841929ac0b2143afdadc944b65efa,
         type: 3}
       propertyPath: m_Enabled
@@ -598,11 +603,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 1.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
-        type: 3}
-      propertyPath: PlayerIndex
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d841929ac0b2143afdadc944b65efa, type: 3}
@@ -1196,6 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599594339}
   - component: {fileID: 599594340}
+  - component: {fileID: 599594341}
   m_Layer: 0
   m_Name: wallpaper_black
   m_TagString: Untagged
@@ -1265,6 +1266,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &599594341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599594338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af3d61d4e74cada3acae7b29a0a2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 396a06bf820e60841bb5cd1ebe998852, type: 2}
 --- !u!1 &647885187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1784,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
+        type: 3}
+      propertyPath: PlayerIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5035609871920764003, guid: 40d841929ac0b2143afdadc944b65efa,
         type: 3}
       propertyPath: m_Color.r
@@ -1790,11 +1809,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
-        type: 3}
-      propertyPath: PlayerIndex
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d841929ac0b2143afdadc944b65efa, type: 3}
@@ -1994,6 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024068955}
   - component: {fileID: 1024068956}
+  - component: {fileID: 1024068957}
   m_Layer: 0
   m_Name: wallpaper_blue
   m_TagString: Untagged
@@ -2063,6 +2078,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1024068957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024068954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af3d61d4e74cada3acae7b29a0a2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 594fe39cf7169174093c8e29f4329373, type: 2}
 --- !u!1 &1047868774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2755,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
+        type: 3}
+      propertyPath: PlayerIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5035609871920764003, guid: 40d841929ac0b2143afdadc944b65efa,
         type: 3}
       propertyPath: m_Sprite
@@ -2757,11 +2790,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
-        type: 3}
-      propertyPath: PlayerIndex
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d841929ac0b2143afdadc944b65efa, type: 3}
@@ -3036,6 +3064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571083886}
   - component: {fileID: 1571083887}
+  - component: {fileID: 1571083888}
   m_Layer: 0
   m_Name: wallpaper_pink
   m_TagString: Untagged
@@ -3105,6 +3134,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1571083888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571083885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af3d61d4e74cada3acae7b29a0a2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: aa06c8b6e8309c447aff5ac1ae705322, type: 2}
 --- !u!1 &1600493587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,6 +3438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1629366969}
   - component: {fileID: 1629366970}
+  - component: {fileID: 1629366971}
   m_Layer: 0
   m_Name: wallpaper_yellow
   m_TagString: Untagged
@@ -3465,6 +3508,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1629366971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629366968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af3d61d4e74cada3acae7b29a0a2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 2dc40c3e2e8b805419f51d6199d79654, type: 2}
 --- !u!1001 &1652608159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3680,7 +3736,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 0d2fcd3ce8db2a7419e30a1b76703b8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4269,6 +4325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895621354}
   - component: {fileID: 1895621355}
+  - component: {fileID: 1895621356}
   m_Layer: 0
   m_Name: wallpaper_light_blue
   m_TagString: Untagged
@@ -4338,6 +4395,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1895621356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895621353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af3d61d4e74cada3acae7b29a0a2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: c48f0e27a156d0f43b316466d3d03c1c, type: 2}
 --- !u!1 &1899278749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3505834107382580788, guid: 36ba1284e39ede24d92dd858175c5bac,
@@ -4618,6 +4688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058230064}
   - component: {fileID: 2058230065}
+  - component: {fileID: 2058230066}
   m_Layer: 0
   m_Name: wallpaper_orange
   m_TagString: Untagged
@@ -4687,6 +4758,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2058230066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058230063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af3d61d4e74cada3acae7b29a0a2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: be4e31d25a0019747afb028153cc817d, type: 2}
 --- !u!1001 &2074825091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4823,6 +4907,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
+        type: 3}
+      propertyPath: PlayerIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5035609871920764003, guid: 40d841929ac0b2143afdadc944b65efa,
         type: 3}
       propertyPath: m_Color.r
@@ -4867,11 +4956,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035609871920764029, guid: 40d841929ac0b2143afdadc944b65efa,
-        type: 3}
-      propertyPath: PlayerIndex
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d841929ac0b2143afdadc944b65efa, type: 3}
@@ -5128,6 +5212,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3646507229194608726, guid: a62c17059fee7a844926ebf15c5ca8d9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3646507229194608727, guid: a62c17059fee7a844926ebf15c5ca8d9,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[23].x
@@ -5227,11 +5316,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[22].y
       value: 2.2413669
-      objectReference: {fileID: 0}
-    - target: {fileID: 3646507229194608726, guid: a62c17059fee7a844926ebf15c5ca8d9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a62c17059fee7a844926ebf15c5ca8d9, type: 3}
@@ -5582,6 +5666,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5855913748962307102, guid: 88c0ba70d513a464ea8f38e1db91eb1e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5855913748962307097, guid: 88c0ba70d513a464ea8f38e1db91eb1e,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -5811,11 +5900,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[30].y
       value: 0.32236576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5855913748962307102, guid: 88c0ba70d513a464ea8f38e1db91eb1e,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c0ba70d513a464ea8f38e1db91eb1e, type: 3}

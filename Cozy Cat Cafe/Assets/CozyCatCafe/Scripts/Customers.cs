@@ -7,100 +7,132 @@ using CozyCatCafe.Scripts;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Customers : MonoBehaviour
 {
-    private State state;
+	private State state;
 
-    public Transform customer;
-    public Transform dish;
-    public Seat seat;
-    public float customerMoveSpeed;
+	public Transform customer;
+	public Transform dish;
+	public Seat seat;
+	public float customerMoveSpeed;
 
-    [Header("Food")]
-    public DialogueBubble bubble;
+	[Header("Food")]
+	public DialogueBubble bubble;
 
-    public Food orderDish;
-    [NonSerialized]
-    public bool gotFood;
-    private Vector3 moveStep;
-    public float fadeStep;
-    private float currentOpacity = 0;
-    
-    private SpriteRenderer _spriteRenderer;
+	public Food orderDish;
 
-    private void Awake() {
-        //createDish();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = new Color(1,1,1,currentOpacity);
+	[NonSerialized]
+	public bool gotFood;
 
-        //Used for testing
-        if (seat != null)
-            moveStep = (customer.position - seat.transform.position) / customerMoveSpeed;
-        //fadeStep = 1 / Vector3.Distance(customer.position, seat.position);
+	private Vector3 moveStep;
+	public float fadeStep;
 
-    }
+	private SpriteRenderer _spriteRenderer;
+	private Sprite _sitting;
+	private Sprite _walking;
 
-    private void Update() {
-        if (state == State.WalkingIn) {
-            if (Vector3.Distance(customer.position, seat.transform.position) > 0.1)
-                goToSeat();
-            else {
-                state = State.Ordering;
-                createDish();
-            }
-        } 
-        
-        else if (state == State.Ordering) {
-            if (!gotFood)
-                return;
-            else {
-                state = State.Eating;
-                bubble.ChangeSprite(null);
-            }
-        } 
-        
-        else if (state == State.Eating) {
-            state = State.WalkingOut;
-            seat.Customer = null;
-        } 
-        
-        else {
-            leave();
-        }
-    }
+	public void SetSprite(Sprite sitting, Sprite walking)
+	{
+		_sitting = sitting;
+		_walking = walking;
+		if (_spriteRenderer != null)
+		{
+			_spriteRenderer.sprite = _walking;
+			_spriteRenderer.color = new Color(1, 1, 1, 0f);
+		}
+	}
 
-    // Used for Spawner
-    public void setSeat(Seat seat){
-        this.seat = seat;
-        seat.Customer = this;
-        moveStep = (customer.position - seat.transform.position) / customerMoveSpeed;
-        fadeStep = 1 / customerMoveSpeed;//Vector3.Distance(customer.position, seat.position);
-    }
+	private void Start()
+	{
+		//createDish();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+		_spriteRenderer.sprite = _walking;
+		_spriteRenderer.color = new Color(1, 1, 1, 0f);
+	}
 
-    void goToSeat(){
-        customer.position = customer.position - moveStep;
-        currentOpacity += 1/fadeStep;
-        _spriteRenderer.color = new Color(1,1,1,currentOpacity);
-    }
+	private void Update()
+	{
+		if (state == State.WalkingIn)
+		{
+			if (_spriteRenderer.color.a < 1f)
+				goToSeat();
+			else
+			{
+				state = State.Ordering;
+				_spriteRenderer.sprite = _sitting;
+				_spriteRenderer.color = Color.white;
+				createDish();
+			}
+		}
 
-    void createDish(){
-        bubble.ChangeSprite(orderDish.Sprite);
-    }
+		else if (state == State.Ordering)
+		{
+			if (!gotFood)
+				return;
+			else
+			{
+				state = State.Eating;
+				bubble.ChangeSprite(null);
+			}
+		}
 
-    void leave(){
-        customer.position = customer.position + moveStep;
-        currentOpacity -= 1/fadeStep;
-        _spriteRenderer.color = new Color(1,1,1,currentOpacity);
+		else if (state == State.Eating)
+		{
+			state = State.WalkingOut;
+			seat.Customer = null;
+		}
 
-        if(currentOpacity < 0){
-            Destroy(gameObject);
-        }
-    }
+		else
+		{
+			leave();
+		}
+	}
 
-    public enum State {
-        WalkingIn,
-        Ordering,
-        Eating,
-        WalkingOut
-    }
+	// Used for Spawner
+	public void setSeat(Seat seat)
+	{
+		this.seat = seat;
+		seat.Customer = this;
+		var delta = customer.position - seat.transform.position;
+		var len = delta.magnitude;
+		var dir = delta / len;
+		moveStep = dir * customerMoveSpeed;
+		var time = len / customerMoveSpeed;
+		fadeStep = 1 / time;
+	}
 
+	void goToSeat()
+	{
+		customer.position -= moveStep * Time.deltaTime;
+		var color = _spriteRenderer.color;
+		color.a += fadeStep * Time.deltaTime;
+		_spriteRenderer.color = color;
+	}
 
+	void createDish()
+	{
+		bubble.ChangeSprite(orderDish.Sprite);
+	}
+
+	void leave()
+	{
+		customer.position += moveStep * Time.deltaTime;
+		var color = _spriteRenderer.color;
+		color.a -= fadeStep * Time.deltaTime;
+
+		if (color.a <= 0)
+		{
+			Destroy(gameObject);
+		}
+		else
+		{
+			_spriteRenderer.color = color;
+		}
+	}
+
+	public enum State
+	{
+		WalkingIn,
+		Ordering,
+		Eating,
+		WalkingOut
+	}
 }

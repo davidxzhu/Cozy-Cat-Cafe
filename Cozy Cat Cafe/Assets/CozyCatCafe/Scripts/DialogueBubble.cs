@@ -17,12 +17,12 @@ namespace CozyCatCafe.Scripts
 			if (sprite == null)
 			{
 				Renderer.sprite = null;
-				Renderer.enabled = false;
+				gameObject.SetActive(false);
 			}
 			else
 			{
-				Renderer.enabled = true;
 				Renderer.sprite = sprite;
+				gameObject.SetActive(true);
 			}
 		}
 	}

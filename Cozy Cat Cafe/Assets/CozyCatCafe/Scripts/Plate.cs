@@ -1,55 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using CozyCatCafe.Scripts;
-using System;
+using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    public PlayerStats player;
-    public Dictionary<HashSet<Food>, Food> myMappings; 
-    public HashSet<Food> onPlate;
-    public Food dishToDisplay;
-    public SpriteRenderer Renderer;
+	public PlayerStats player;
+	public PlateRecipe RecipeList;
+	public readonly HashSet<Food> onPlate = new HashSet<Food>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        myMappings = new Dictionary<HashSet<Food>, Food>(HashSet<Food>.CreateSetComparer());
-        onPlate = new HashSet<Food>();
-        dishToDisplay = null;
-    }
+	public SpriteRenderer FoodDisplay;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private Food _dish;
 
-    void OnMouseDown(){
-        if(player.holding != null) {
-            putFood();
-        } else if(!player.holdingPlate){
-            player.holdingPlate = true;
-            player.holdingDish = this;
-        }
-    }
+	public Food dishToDisplay
+	{
+		get => _dish;
+		private set
+		{
+			_dish = value;
+			if (FoodDisplay != null)
+				FoodDisplay.sprite = value.Sprite;
+		}
+	}
 
-    void putFood(){
-        onPlate.Add(player.holding);
-        player.holding = null;
-        if(myMappings[onPlate] == null){
+	void OnMouseDown()
+	{
+		if (player.holding != null)
+		{
+			putFood();
+		}
+		else if (dishToDisplay != null)
+		{
+			player.holding = dishToDisplay;
+			onPlate.Clear();
+			dishToDisplay = null;
+		}
+	}
 
-        } else{
-            dishToDisplay = myMappings[onPlate];
-        }
-    }
+	void putFood()
+	{
+		var toAdd = player.holding;
+		onPlate.Add(toAdd);
+		player.holding = null;
 
-
-
-    [Serializable]
-    public class FoodMapping {
-        public HashSet<Food> ingredients;
-        public Food dishFromIngredients;
-    }
+		if (onPlate.Count <= 0)
+			dishToDisplay = null;
+		else if (onPlate.Count <= 1)
+			dishToDisplay = toAdd;
+		else
+		{
+			var (bestFood, matchPercentage) = RecipeList.GetBestFood(onPlate);
+			dishToDisplay = bestFood;
+		}
+	}
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360126369115dcd448b8286c85e79e96, type: 3}
+  m_Name: PlateRecipes
+  m_EditorClassIdentifier: 
+  _recipes:
+  - _foods:
+    - {fileID: 11400000, guid: d848617023ffe1042b497fdfebae9204, type: 2}
+    - {fileID: 11400000, guid: ceccb58ea12d0444ab39865a6bb35871, type: 2}
+    Result: {fileID: 11400000, guid: 363902e062a744f4bad40f0fee6e839d, type: 2}
+  - _foods:
+    - {fileID: 11400000, guid: ceccb58ea12d0444ab39865a6bb35871, type: 2}
+    - {fileID: 11400000, guid: 39e9999e9db40874cbe6aca5ae0bb8fb, type: 2}
+    Result: {fileID: 11400000, guid: a6f2b2e222d32434a84b00a338c97547, type: 2}

@@ -23,6 +23,8 @@ public class Plate : MonoBehaviour
 		}
 	}
 
+	public int PlayerIndex;
+
 	void OnMouseDown()
 	{
 		if (player.holding != null)
@@ -33,12 +35,14 @@ public class Plate : MonoBehaviour
 			}
 			else
 			{
+				PlayerVisibility.Instance.Select(PlayerIndex);
 				SoundMaster.Play(SoundMaster.Type.Item);
 				putFood();
 			}
 		}
 		else if (dishToDisplay != null)
 		{
+			PlayerVisibility.Instance.Select(PlayerIndex);
 			SoundMaster.Play(SoundMaster.Type.Item);
 			player.holding = dishToDisplay;
 			onPlate.Clear();

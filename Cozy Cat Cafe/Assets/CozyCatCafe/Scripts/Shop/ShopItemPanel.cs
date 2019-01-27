@@ -20,7 +20,7 @@ namespace CozyCatCafe.Scripts.Shop
 			Sprite.sprite = item.Thumbnail;
 			Name.text = item.name;
 			Description.text = item.Description;
-			Cost.text = $"<sprite=1>{item.Cost}";
+			Cost.text = $"{item.Cost}";
 			BuyButton.interactable = notExpensive;
 			BuyButton.onClick.AddListener(() => menu.Buy(item, this));
 			if (item.Bought)

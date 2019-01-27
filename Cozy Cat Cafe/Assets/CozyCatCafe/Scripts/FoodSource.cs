@@ -16,8 +16,11 @@ namespace CozyCatCafe.Scripts
 		private bool _timerStarted;
 		private bool _hasFood = true;
 
+		public int PlayerIndex;
+
 		private IEnumerator Timer()
 		{
+			PlayerVisibility.Instance.Select(PlayerIndex);
 			_timerStarted = true;
 			yield return new WaitForSeconds(Duration);
 			_timerStarted = false;
@@ -30,6 +33,7 @@ namespace CozyCatCafe.Scripts
 			{
 				if (Player.holding == null)
 				{
+					PlayerVisibility.Instance.Select(PlayerIndex);
 					SoundMaster.Play(SoundMaster.Type.Item);
 					Player.holding = FoodToProduce;
 					//_hasFood = false;

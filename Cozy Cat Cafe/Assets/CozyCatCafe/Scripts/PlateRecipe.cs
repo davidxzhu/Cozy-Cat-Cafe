@@ -10,7 +10,7 @@ namespace CozyCatCafe.Scripts
 		[SerializeField]
 		private List<Recipe> _recipes;
 
-		public (Food bestFood, float matchPercentage) GetBestFood(IEnumerable<Food> plateFoods)
+		public (Food bestFood, float matchPercentage) GetBestFood(HashSet<Food> plateFoods)
 		{
 			if (_recipes == null || _recipes.Count <= 0)
 				return (null, 0f);
@@ -22,11 +22,16 @@ namespace CozyCatCafe.Scripts
 			{
 				var delta = 1f / recipe.Foods.Count;
 				var percentage = 0f;
+				var missedCount = 0;
 				foreach (var food in plateFoods)
 				{
 					if (recipe.Foods.Contains(food))
 						percentage += delta;
+					else
+						missedCount++;
 				}
+
+				percentage *= (plateFoods.Count - missedCount) * 1f / (plateFoods.Count - 1);
 
 				if (match < percentage)
 				{

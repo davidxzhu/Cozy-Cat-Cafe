@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CozyCatCafe.Scripts;
 using UnityEngine;
 
@@ -8,7 +7,21 @@ public class Plate : MonoBehaviour
 	public PlayerStats player;
 	public PlateRecipe RecipeList;
 	public readonly HashSet<Food> onPlate = new HashSet<Food>();
-	public Food dishToDisplay;
+
+	public SpriteRenderer FoodDisplay;
+
+	private Food _dish;
+
+	public Food dishToDisplay
+	{
+		get => _dish;
+		private set
+		{
+			_dish = value;
+			if (FoodDisplay != null)
+				FoodDisplay.sprite = value.Sprite;
+		}
+	}
 
 	void OnMouseDown()
 	{
@@ -19,15 +32,25 @@ public class Plate : MonoBehaviour
 		else if (dishToDisplay != null)
 		{
 			player.holding = dishToDisplay;
+			onPlate.Clear();
+			dishToDisplay = null;
 		}
 	}
 
 	void putFood()
 	{
-		onPlate.Add(player.holding);
+		var toAdd = player.holding;
+		onPlate.Add(toAdd);
 		player.holding = null;
-		
-		var (bestFood, matchPercentage) = RecipeList.GetBestFood(onPlate);
-		dishToDisplay = bestFood;
+
+		if (onPlate.Count <= 0)
+			dishToDisplay = null;
+		else if (onPlate.Count <= 1)
+			dishToDisplay = toAdd;
+		else
+		{
+			var (bestFood, matchPercentage) = RecipeList.GetBestFood(onPlate);
+			dishToDisplay = bestFood;
+		}
 	}
 }

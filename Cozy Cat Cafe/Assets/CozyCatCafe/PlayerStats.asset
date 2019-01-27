@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bcd1edc08274907bffa067a30a10f8f, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  Money: 9
+  Money: 885
   holding: {fileID: 0}

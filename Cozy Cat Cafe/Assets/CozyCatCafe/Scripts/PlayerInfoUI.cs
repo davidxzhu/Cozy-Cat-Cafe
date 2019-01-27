@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CozyCatCafe.Scripts;
+using TMPro;
 
 public class PlayerInfoUI : MonoBehaviour
 {
     public PlayerStats PlayerInfo;
     public Image CurrentFoodDisplay;
-    public Text CurrentMoneyDisplay;
+    public TextMeshProUGUI CurrentMoneyDisplay;
     private Food CurrentHolding;
     private int CurrentMoney;
 

@@ -1,5 +1,7 @@
+using System;
 using Plugins.CloudCanards.Inspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CozyCatCafe.Scripts
 {
@@ -20,6 +22,8 @@ namespace CozyCatCafe.Scripts
 
 		private float _remainingDuration = 2f;
 
+		public SpritePair[] Sprites;
+
 		private void Update()
 		{
 			_remainingDuration -= Time.deltaTime;
@@ -33,6 +37,8 @@ namespace CozyCatCafe.Scripts
 					{
 						var obj = Instantiate(CustomerPrefab, transform.position, Quaternion.identity);
 						obj.setSeat(Seats[i]);
+						var sprite = Sprites[Random.Range(0, Sprites.Length)];
+						obj.SetSprite(sprite.Sitting, sprite.WalkingBack);
 
 						var index = _spawnNo;
 						if (index >= OrderList.Length)
@@ -51,6 +57,13 @@ namespace CozyCatCafe.Scripts
 					}
 				}
 			}
+		}
+
+		[Serializable]
+		public struct SpritePair
+		{
+			public Sprite WalkingBack;
+			public Sprite Sitting;
 		}
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CozyCatCafe.Scripts
 {
-	public class SaveSystem : MonoBehaviour
+	public class SaveSystem : ScriptableObject
 	{
 		private const string MoneyKey = "Money";
 		private const string DecorationsKey = "Decorations";
@@ -12,13 +12,6 @@ namespace CozyCatCafe.Scripts
 		public PlayerStats Player;
 
 		public ShopItem[] Decorations;
-
-		private string _decorationsDefaultValue;
-
-		private void Awake()
-		{
-			_decorationsDefaultValue = new string('f', Decorations.Length);
-		}
 
 		public void Save()
 		{
@@ -41,7 +34,7 @@ namespace CozyCatCafe.Scripts
 			PlayerPrefs.GetInt(MoneyKey, Player.Money);
 			
 			// decorations
-			var decorationsStr = PlayerPrefs.GetString(DecorationsKey, _decorationsDefaultValue);
+			var decorationsStr = PlayerPrefs.GetString(DecorationsKey, new string('f', Decorations.Length));
 			for (var index = 0; index < Decorations.Length; index++)
 			{
 				Decorations[index].Bought = decorationsStr[index] == 't';

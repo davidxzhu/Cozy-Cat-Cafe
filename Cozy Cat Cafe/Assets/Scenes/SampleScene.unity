@@ -119,11 +119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174258917}
     m_Modifications:
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d2687b7374ec942aba06a9381f10a2, type: 3}
@@ -1217,11 +1217,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 326337892}
     m_Modifications:
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1276,6 +1271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d2687b7374ec942aba06a9381f10a2, type: 3}
@@ -1936,6 +1936,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1328781270792804707, guid: 40d841929ac0b2143afdadc944b65efa,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d841929ac0b2143afdadc944b65efa, type: 3}
 --- !u!114 &942359513 stripped
@@ -2035,11 +2040,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1899278753}
     m_Modifications:
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2094,6 +2094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d2687b7374ec942aba06a9381f10a2, type: 3}
@@ -3840,11 +3845,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 996300949}
     m_Modifications:
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3899,6 +3899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d2687b7374ec942aba06a9381f10a2, type: 3}
@@ -4474,11 +4479,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1252692031}
     m_Modifications:
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4533,6 +4533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d2687b7374ec942aba06a9381f10a2, type: 3}
@@ -5090,11 +5095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56599340}
     m_Modifications:
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5149,6 +5149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d2687b7374ec942aba06a9381f10a2, type: 3}

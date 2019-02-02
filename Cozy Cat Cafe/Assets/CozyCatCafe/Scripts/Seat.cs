@@ -17,7 +17,7 @@ namespace CozyCatCafe.Scripts
 
 		public int PlayerIndex;
 
-		private void OnMouseDown()
+        private void OnMouseDown()
 		{
 			if (Player.holding == null)
 			{
@@ -31,13 +31,13 @@ namespace CozyCatCafe.Scripts
 			{
 				// todo
 				Player.Money++;
-				if (HappyParticles != null)
-					Instantiate(HappyParticles, transform);
+                if (HappyParticles != null)
+                    Instantiate(HappyParticles, transform);
 			}
 			else
 			{
-				if (SadParticles != null)
-					Instantiate(SadParticles, transform);
+                if (SadParticles != null)
+                    Instantiate(SadParticles, transform);
 			}
 
 			Player.holding = null;

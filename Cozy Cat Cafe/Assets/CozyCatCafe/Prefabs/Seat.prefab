@@ -114,3 +114,4 @@ MonoBehaviour:
     type: 3}
   SadParticles: {fileID: 569019551940893686, guid: d8b3c376547a0964ab4575e973f52144,
     type: 3}
+  PlayerIndex: 0

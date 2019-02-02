@@ -14,6 +14,8 @@ namespace CozyCatCafe.Scripts
 		public AudioClip Menu;
 		public AudioClip Invalid;
 
+        public bool isPlaying = false;
+
 		private void Awake()
 		{
 			if (_master == null)

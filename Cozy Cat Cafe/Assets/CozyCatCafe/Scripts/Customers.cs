@@ -29,6 +29,12 @@ public class Customers : MonoBehaviour
 	private Sprite _sitting;
 	private Sprite _walking;
 
+	[Header("Sound")]
+	private AudioSource _catSource;
+	public AudioClip CatHungryClip;
+	public AudioClip CatHappyClip;
+	public static bool IsPlaying;
+
 	public void SetSprite(Sprite sitting, Sprite walking)
 	{
 		_sitting = sitting;
@@ -46,6 +52,8 @@ public class Customers : MonoBehaviour
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_spriteRenderer.sprite = _walking;
 		_spriteRenderer.color = new Color(1, 1, 1, 0f);
+
+		IsPlaying = false;
 	}
 
 	private void Update()
@@ -71,6 +79,9 @@ public class Customers : MonoBehaviour
 			{
 				state = State.Eating;
 				bubble.ChangeSprite(null);
+				_catSource = GetComponent<AudioSource>();
+				_catSource.volume = 1.0f;
+				_catSource.PlayOneShot(CatHappyClip);
 			}
 		}
 
@@ -105,6 +116,13 @@ public class Customers : MonoBehaviour
 		var color = _spriteRenderer.color;
 		color.a += fadeStep * Time.deltaTime;
 		_spriteRenderer.color = color;
+		if (!IsPlaying)
+		{
+			IsPlaying = true;
+			_catSource = GetComponent<AudioSource>();
+			_catSource.volume = 0.175f;
+			_catSource.PlayOneShot(CatHungryClip);
+		}
 	}
 
 	void createDish()

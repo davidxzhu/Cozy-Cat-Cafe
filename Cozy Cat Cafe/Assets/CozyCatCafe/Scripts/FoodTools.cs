@@ -48,6 +48,11 @@ public class FoodTools : MonoBehaviour
 		{
 			progress += Time.deltaTime * delta;
 			ProgressBar.Progress = Mathf.Clamp01(progress);
+			
+			// sound fadeout
+			if (progress >= 0.95f)
+				sound.volume -= 0.005f;
+
 			yield return null;
 		}
 
@@ -67,11 +72,6 @@ public class FoodTools : MonoBehaviour
 		{
 			myFoods[item.foodBefore] = item.foodAfter;
 		}
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
 	}
 
 	void OnMouseDown()

@@ -122,7 +122,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.3
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   WithoutFood: {fileID: 21300000, guid: 1c3c422bcdd90db44890fd29e16986bd, type: 3}
   WithFood: {fileID: 21300000, guid: 1f41582757684914b9b251a520f7fde8, type: 3}
   ProgressBar: {fileID: 618087143749000045}
+  PlayerIndex: 0
 --- !u!1001 &2074614046014632468
 PrefabInstance:
   m_ObjectHideFlags: 0

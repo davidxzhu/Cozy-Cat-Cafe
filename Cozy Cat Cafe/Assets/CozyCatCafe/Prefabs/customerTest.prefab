@@ -101,6 +101,8 @@ MonoBehaviour:
   bubble: {fileID: 9199466537097265593}
   orderDish: {fileID: 11400000, guid: 4f609c42b2715c54ea9b79d6e1091ba7, type: 2}
   fadeStep: 150
+  CatHungryClip: {fileID: 8300000, guid: 44bc7b01357f6364c8897988d9f3f7fa, type: 3}
+  CatHappyClip: {fileID: 8300000, guid: 230c3f23004dc734d885d39490e6cc36, type: 3}
 --- !u!82 &1861167535798048486
 AudioSource:
   m_ObjectHideFlags: 0
@@ -110,10 +112,11 @@ AudioSource:
   m_GameObject: {fileID: 7756046766653991628}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 44bc7b01357f6364c8897988d9f3f7fa, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.35
+  OutputAudioMixerGroup: {fileID: 243508373012219666, guid: a7a38da0191ba1742953e4ee40ffc192,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -204,6 +207,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7756046766653991627}
     m_Modifications:
+    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueBubble
+      objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639303, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,11 +276,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443422801423639298, guid: b3d2687b7374ec942aba06a9381f10a2,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueBubble
       objectReference: {fileID: 0}
     - target: {fileID: 1443422801423639300, guid: b3d2687b7374ec942aba06a9381f10a2,
         type: 3}

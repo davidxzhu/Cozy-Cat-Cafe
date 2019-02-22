@@ -27,6 +27,7 @@ public class Plate : MonoBehaviour
 
 	void OnMouseDown()
 	{
+		PlayerVisibility.Instance.Select(PlayerIndex);
 		if (player.holding != null)
 		{
 			if (onPlate.Contains(player.holding))
@@ -35,14 +36,12 @@ public class Plate : MonoBehaviour
 			}
 			else
 			{
-				PlayerVisibility.Instance.Select(PlayerIndex);
 				SoundMaster.Play(SoundMaster.Type.Item);
 				putFood();
 			}
 		}
 		else if (dishToDisplay != null)
 		{
-			PlayerVisibility.Instance.Select(PlayerIndex);
 			SoundMaster.Play(SoundMaster.Type.Item);
 			player.holding = dishToDisplay;
 			onPlate.Clear();

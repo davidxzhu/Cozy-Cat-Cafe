@@ -76,6 +76,7 @@ public class FoodTools : MonoBehaviour
 
 	void OnMouseDown()
 	{
+		PlayerVisibility.Instance.Select(PlayerIndex);
 		if (foodProcessing == null)
 		{
 			//if tool is unused
@@ -96,7 +97,6 @@ public class FoodTools : MonoBehaviour
 	{
 		if (foodProcessing == null && player.holding != null && myFoods.ContainsKey(player.holding) && !_timerStarted)
 		{
-			PlayerVisibility.Instance.Select(PlayerIndex);
 			foodProcessing = player.holding;
 			player.holding = null;
 			_renderer.sprite = WithFood;
@@ -112,7 +112,6 @@ public class FoodTools : MonoBehaviour
 	{
 		if (player.holding == null)
 		{
-			PlayerVisibility.Instance.Select(PlayerIndex);
 			SoundMaster.Play(SoundMaster.Type.Item);
 			player.holding = myFoods[foodProcessing];
 			foodProcessing = null;

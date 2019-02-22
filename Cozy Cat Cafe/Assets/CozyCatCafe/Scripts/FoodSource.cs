@@ -20,7 +20,6 @@ namespace CozyCatCafe.Scripts
 
 		private IEnumerator Timer()
 		{
-			PlayerVisibility.Instance.Select(PlayerIndex);
 			_timerStarted = true;
 			yield return new WaitForSeconds(Duration);
 			_timerStarted = false;
@@ -29,11 +28,11 @@ namespace CozyCatCafe.Scripts
 
 		private void OnMouseDown()
 		{
+			PlayerVisibility.Instance.Select(PlayerIndex);
 			if (_hasFood)
 			{
 				if (Player.holding == null)
 				{
-					PlayerVisibility.Instance.Select(PlayerIndex);
 					SoundMaster.Play(SoundMaster.Type.Item);
 					Player.holding = FoodToProduce;
 					//_hasFood = false;

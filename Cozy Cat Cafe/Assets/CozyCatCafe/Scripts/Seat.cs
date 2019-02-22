@@ -19,13 +19,13 @@ namespace CozyCatCafe.Scripts
 
         private void OnMouseDown()
 		{
+			PlayerVisibility.Instance.Select(PlayerIndex);
 			if (Player.holding == null)
 			{
 				SoundMaster.Play(SoundMaster.Type.Invalid);
 				return;
 			}
 
-			PlayerVisibility.Instance.Select(PlayerIndex);
 			Customer.gotFood = true;
 			if (Player.holding == Customer.orderDish)
 			{
